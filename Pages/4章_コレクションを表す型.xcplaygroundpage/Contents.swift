@@ -9,9 +9,9 @@ import Foundation
 
 //mapメソッド 要素を変換する
 // ------------------------
-let array = [1,2,3,4,5,6]
+let array = [1, 2, 3, 4, 5, 6]
 // ------------------------
-let doubled = array.map({ element in element * 2})  // 配列attayの各要素を二倍
+let doubled = array.map({ element in element * 2})  // 配列arrayの各要素を二倍
 doubled
 
 
@@ -35,6 +35,14 @@ integers
 // reduceメソッド 要素を一つの値にまとめる
 let sum = array.reduce(0, { result, element in result + element})
 sum
+
+
+// reduce 例
+let numbers = [1, 2, 3, 4]
+let numberSum = numbers.reduce(0, { x, y in
+x + y
+})
+numberSum
 
 //Collectionプロトコル サブスクリプトによる要素へのアクセス
 array[3]
