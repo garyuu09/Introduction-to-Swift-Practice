@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'/>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='4章_コレクションを表す型'/>
+        <page name='5章_制御構文'/>
+        <page name='6章_関数のクロージャ'/>
+    </pages>
+</playground>
