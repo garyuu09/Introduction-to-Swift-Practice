@@ -224,5 +224,61 @@ default:
     print("対象外の型の値です")
 }
 
+// 5.4 遅延実行
+
+var count = 0
+
+func someFunction1() -> Int {
+    defer {
+        count += 1
+    }
+    return count
+}
+
+someFunction1()
+count
+
+// 5.5 パターンマッチ
+
+let integer = 9
+
+switch integer {
+case 6:
+    print("match:6")
+case 5...10:
+    print("match:5...10")
+default:
+    print("default")
+}
+
+let value3 = 3
+
+switch value3 {
+case let matchedValue:
+    print(matchedValue)
+}
+
+// オプショナルパターン
+
+let optionalBB = Optional(4)
+switch optionalBB {
+case let a?:
+    print(a)
+default:
+    print("nil")
+}
+
+// is演算子による型キャスティングパターン
+let any1: Any = 1
+
+switch any1 {
+case is String:
+    print("match: String")
+case is Int:
+    print("match: Int")
+default:
+    print("default")
+}
+
 
 //: [Next](@next)

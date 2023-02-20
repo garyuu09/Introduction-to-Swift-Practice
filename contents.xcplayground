@@ -3,6 +3,7 @@
     <pages>
         <page name='4章_コレクションを表す型'/>
         <page name='5章_制御構文'/>
-        <page name='6章_関数のクロージャ'/>
+        <page name='6章_関数とクロージャ'/>
+        <page name='7章_型の構成要素'/>
     </pages>
 </playground>
