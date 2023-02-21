@@ -51,4 +51,15 @@ array.count
 array.first
 array.last
 
+
+
+
+var hog = [1, 2]
+hog.append(20)
+
+print(hog)
+
+
+
+
 //: [Next](@next)

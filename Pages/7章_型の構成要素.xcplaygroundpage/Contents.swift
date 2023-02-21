@@ -163,8 +163,27 @@ struct Temperature {
 }
 
 var temperature = Temperature()
+
+//temperature.celsius =
+temperature.fahrenheit = 50
 temperature.celsius
 temperature.fahrenheit
+
+
+//セッタの省略
+
+struct SetGreeting {
+    var to = "Yosuke Ishikawa"
+    var body: String {
+        return "Hello, \(to)"
+    }
+}
+
+var setGreeting = SetGreeting()
+setGreeting.to = "Hi"
+
+setGreeting.body
+
 
 
 //: [Next](@next)
