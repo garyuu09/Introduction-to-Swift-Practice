@@ -11,6 +11,9 @@ import Foundation
 // ------------------------
 let array = [1, 2, 3, 4, 5, 6]
 // ------------------------
+
+let array1 = [Int]()
+
 let doubled = array.map({ element in element * 2})  // 配列arrayの各要素を二倍
 doubled
 

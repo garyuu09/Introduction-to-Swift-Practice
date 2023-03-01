@@ -16,6 +16,7 @@ struct SomeStruct {
     let constant = 456
 }
 
+ // プロパティにアクセスする方法
 let someStruct = SomeStruct()
 let a = someStruct.variable
 let b = someStruct.constant
@@ -27,12 +28,12 @@ struct Greeting {
     var body = "Hello"
 }
 
-//let greeting1 = Greeting()
-//var greeting2 = Greeting()
-//greeting2.to = "Yusei Nishiyama"
-//
-//let to1 = greeting1.to
-//let to2 = greeting2.to
+let greeting11 = Greeting()
+var greeting22 = Greeting()
+greeting22.to = "Yusei Nishiyama"
+
+let to1 = greeting11.to
+let to2 = greeting22.to
 
 // スタティックプロパティ
 
@@ -93,7 +94,7 @@ struct WillDidStruct {
         }
     }
 }
-
+print("---------")
 var willDidStruct = WillDidStruct()
 willDidStruct.to = "Yusei Nishiyama"
 
@@ -183,6 +184,59 @@ var setGreeting = SetGreeting()
 setGreeting.to = "Hi"
 
 setGreeting.body
+
+// 7.4 イニシャライザ
+//init(引数) {
+//    初期化処理
+//}
+
+struct HogeGreeting {
+    let to: String
+    var body: String {
+        return "Hello, \(to)!"
+    }
+    init(to: String) {
+        self.to = to
+    }
+}
+
+let hogeGreeting = HogeGreeting(to: "hoge")
+let body = hogeGreeting.body
+
+// 失敗可能可能イニシャライザ
+
+struct Item {
+    let id: Int
+    let title: String
+
+    init?(dictionary: [String: Any]) {
+        guard let id = dictionary["id"] as? Int,
+              let title = dictionary["title"] as? String else {
+                  // このケースではidとtitleは未初期化のままでもコンパイル可能
+                  return nil
+              }
+        self.id = id
+        self.title = title
+    }
+}
+
+let dictionaries: [[String: Any]] = [
+    ["id": 1, "title": "abc"],
+    ["id": 2, "title": "def"],
+    ["title": "ghi"], // idが欠けている辞書
+    ["id": 3, "title": "jkl"],
+]
+
+for dictionary in dictionaries {
+    // 失敗可能イニシャライザはItem?を返す
+    if let item = Item(dictionary: dictionary) {
+        print(item)
+    } else {
+        print("エラー: 辞書\(dictionary)からItemを生成できませんでした")
+    }
+}
+
+
 
 
 
