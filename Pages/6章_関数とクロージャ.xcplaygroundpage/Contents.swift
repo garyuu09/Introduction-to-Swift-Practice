@@ -44,13 +44,15 @@ print(strings: "abc", "def", "ghi")
 //    クロージャの実行時に実行される文
 //    必要に応じてreturn文で戻り値を返却する
 //}
-
+// 引数×2
 let double = { (x: Int) -> Int in
     return x * 2
 }
 double(2)
 
-
+// 足し算
+let sum = { (x, y) -> Int in x + y}
+sum(2,3)
 
 var closure: (String) -> Int
 

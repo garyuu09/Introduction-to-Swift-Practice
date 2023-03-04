@@ -237,7 +237,13 @@ for dictionary in dictionaries {
 }
 
 
+let range = 1...100
+var floatRange: ClosedRange<Double> {
+    Double(range.lowerBound)...Double(range.upperBound)
+}
 
+print(range)
 
+print(floatRange)
 
 //: [Next](@next)
