@@ -4,9 +4,10 @@
         <page name='4章_コレクションを表す型'/>
         <page name='5章_制御構文'/>
         <page name='6章_関数とクロージャ'/>
+        <page name='7章_型の構成要素'/>
         <page name='static var'/>
         <page name='tuple'/>
-        <page name='7章_型の構成要素'/>
-        <page name='sakoさんクロージャ勉強会'/>
+        <page name='sakoさんクロージャ勉強会'/>
+        <page name='class vs struct'/>
     </pages>
 </playground>

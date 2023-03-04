@@ -42,19 +42,5 @@ p2.age = 100
 p1
 p2
 
-
-
-//var alice = Person(name: "Alice", age: 22)
-//print(alice)
-//print(alice.makeDisguise())
-
-
-let name = "高橋"
-let who = name + "さん"
-
-
-v
-
-
 //: [Next](@next)
 

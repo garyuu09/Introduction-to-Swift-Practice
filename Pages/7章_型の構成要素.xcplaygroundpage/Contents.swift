@@ -237,13 +237,146 @@ for dictionary in dictionaries {
 }
 
 
-let range = 1...100
-var floatRange: ClosedRange<Double> {
-    Double(range.lowerBound)...Double(range.upperBound)
+
+// 7.5 メソッド
+
+struct Method {
+    func greet(user: String) -> Void {
+        print("Hello, \(user)!")
+    }
 }
 
-print(range)
+// インスタンスメソッド　型のインスタンスに紐づくメソッド
+let method = Method()
+method.greet(user: "Yusei Nishiyama")
 
-print(floatRange)
+struct VazStruct {
+    var value = 0
 
+    func printValue() {
+        print("value: \(self.value)")
+    }
+}
+
+var vazStruct = VazStruct()
+vazStruct.value = 1
+vazStruct.printValue()
+
+// スタティックメソッド 型自身に紐づくメソッド
+
+struct SentFrom {
+    static var signature = "Sent from iPhone"
+
+    static func setSignature(withDeviceName deviceName: String) {
+        signature = "sent from \(deviceName)"
+    }
+
+    var to = "Yosuke Ishikawa"
+    var body: String {
+        return "Hello, \(to)!\n\(SentFrom.signature)"
+    }
+}
+
+let sentFrom = SentFrom()
+print(sentFrom.body)
+
+
+SentFrom.setSignature(withDeviceName: "Xperia")
+print(sentFrom.body)
+
+
+// オーバーロード 型が異なる同名のメソッドの定義
+
+struct Printer {
+    func put(_ value: String) {
+        print("string: \(value)")
+    }
+    func put(_ value: Int) {
+        print("Int: \(value)")
+    }
+}
+
+let printer = Printer()
+printer.put("abc")
+printer.put(123)
+
+// 戻り値によるオーバーロード
+
+struct ValueContainer {
+    let stringValue = "abc"
+    let intValue = 123
+
+    func getValue() -> String {
+        return stringValue
+    }
+    func getValue() -> Int {
+        return intValue
+    }
+}
+
+let valueContainer = ValueContainer()
+let string: String = valueContainer.getValue()
+let int: Int = valueContainer.getValue()
+
+//let value = valueContainer.getValue() // 戻り値の型を推論できないため、コンパイルエラー
+
+
+// 7.6 サブスクリプト
+let array = [1,2,3]
+let firstElement = array[0]
+
+// サブスクリプト定義方法
+//subscript(引数) -> 戻り値の型 {
+//    get {
+//        return文によって値を返す処理
+//    }
+//
+//    set {
+//        値を更新する処理
+//    }
+//}
+
+// 数列
+struct Progression {
+    var numbers: [Int]
+
+    subscript(index: Int) -> Int {
+        get {
+            return numbers[index]
+        }
+
+        set {
+            numbers[index] = newValue
+        }
+    }
+}
+
+var progression = Progression(numbers: [1,2,3])
+let element1 = progression[1]
+
+progression[1] = 4
+let element2 = progression[1]
+
+// 行列
+struct Matrix {
+    var rows: [[Int]]
+
+    subscript(row: Int, column: Int) -> Int {
+        get {
+            return rows[row][column]
+        }
+
+        set {
+            rows[row][column] = newValue
+        }
+    }
+}
+
+let matrix = Matrix(rows: [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+])
+
+let element = matrix[1,1]
 //: [Next](@next)

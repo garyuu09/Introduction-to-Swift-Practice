@@ -1,7 +1,7 @@
 //: [Previous](@previous)
 
 import Foundation
-
+import UIKit
 // 6.2 関数
 // 定義方法
 
@@ -97,6 +97,38 @@ let lengthOfString = {(string: String) -> Int in
 
 lengthOfString("I contain 23 characters")
 
+
+
+func plus(exec: (Int, Int, Int) -> Int) {
+    exec(1, 2, 3)
+}
+
+// 使用箇所
+plus() { _, count2, count3 in
+    print(count2 + count3)
+    return count2 + count3
+}
+
+
+private func fetchPokemonData(completion: @escaping (Result<[Data], Error>) -> Void) {
+    var dataArray: [Data] = []
+    let urls = getURLs()
+    urls.forEach {
+        guard let url = $0 else { return }
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            if let data = data {
+                dataArray.append(data)
+            }
+            if urls.count == dataArray.count {
+                completion(.success(dataArray))
+            }
+        })
+        task.resume()
+    }
+}
 
 
 //: [Next](@next)
