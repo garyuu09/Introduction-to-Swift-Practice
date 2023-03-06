@@ -8,6 +8,7 @@
         <page name='static var'/>
         <page name='tuple'/>
         <page name='sakoさんクロージャ勉強会'/>
+        <page name='Function Operator'/>
         <page name='class vs struct'/>
     </pages>
 </playground>
