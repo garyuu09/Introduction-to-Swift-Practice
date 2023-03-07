@@ -269,16 +269,23 @@ default:
 }
 
 // is演算子による型キャスティングパターン
-let any1: Any = 1
+let any1: Any = 1.0
 
 switch any1 {
 case is String:
     print("match: String")
 case is Int:
     print("match: Int")
+case is Double:
+    print("match: Double")
+
 default:
     print("default")
 }
+
+
+
+
 
 
 //: [Next](@next)

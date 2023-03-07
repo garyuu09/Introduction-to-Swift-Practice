@@ -13,7 +13,7 @@ minus(1, 1) //0
 
 
 // Locoさんより共有頂いたサンプルコード
-let sum: (Int, Int) -> Int = { $0 + $1 }
+let sum: (Int, Int) -> Int = { (num1:Int,num2:Int) -> Int in return num1 + num2 }
  sum(5, 3) // 8
 
 

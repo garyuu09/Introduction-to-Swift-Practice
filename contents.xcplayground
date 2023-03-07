@@ -5,10 +5,12 @@
         <page name='5章_制御構文'/>
         <page name='6章_関数とクロージャ'/>
         <page name='7章_型の構成要素'/>
+        <page name='8章_型の種類'/>
         <page name='static var'/>
         <page name='tuple'/>
         <page name='sakoさんクロージャ勉強会'/>
         <page name='Function Operator'/>
         <page name='class vs struct'/>
+        <page name='test'/>
     </pages>
 </playground>
